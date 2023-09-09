@@ -5,7 +5,7 @@
       <paths name="helios">
         <serverdata>
           <mappings>
-            <mapping deploy="/public_html/web-lab1" local="$PROJECT_DIR$" web="/web-lab1" />
+            <mapping deploy="/public_html/web-lab1" local="$PROJECT_DIR$" web="~s367658/web-lab1/" />
           </mappings>
         </serverdata>
       </paths>

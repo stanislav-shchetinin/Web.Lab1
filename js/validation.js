@@ -17,11 +17,8 @@ const validation = () => {
         } else if (!checkSelectorR(selectorR)){
             alert("Не выбран R");
         } else {
-            form.submit();
-            console.log(form.response);
+            sendRequest(form);
         }
-
-        
     })
 }
 validation();
