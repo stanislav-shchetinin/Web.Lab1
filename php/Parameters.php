@@ -55,8 +55,17 @@ class Parameters
             $this->check_r();
     }
 
+    public function checkInArea() : bool
+    {
+        return $this->y >= 0 && $this->x >= 0 && $this->r - $this->x >= $this->y ||
+            $this->y <= 0 && $this->x <= 0 && $this->x >= -$this->r && $this->y >= -$this->r/2 ||
+            $this->x <= 0 && $this->y >= 0 && $this->x**2 + $this->y**2 <= ($this->r/2)**2;
+    }
+
     public function __toString() : string{
         return $this->x." ".$this->y." ".$this->r;
     }
-
+    public function getArrayParameters() : array {
+        return [$this->x, $this->y, $this->r];
+    }
 }
