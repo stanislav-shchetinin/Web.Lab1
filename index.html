@@ -52,7 +52,7 @@
         </div>
     </header>
     <section class="heading">
-        <h1 onclick="saveTable()" class="title" data-aos="fade-up" data-aos-delay="500">
+        <h1 class="title" data-aos="fade-up" data-aos-delay="500">
             Лабораторная работа №1
         </h1>
         <p class="description" data-aos="fade-up" data-aos-delay="900">
@@ -61,10 +61,9 @@
     </section>
     <img src="img/pepe.gif" alt="gif" class="gif">
     <img src="img/graph.webp" alt="graph" class="gif">
-<!--    <canvas id="graph" width="300" height="300"></canvas>-->
     <div class="main">  
 
-        <form class="input-form" action="php/handler.php" method="GET">
+        <div class="input-form">
             <p>X:</p>
             <fieldset>
                 <div class="radio-btn">
@@ -163,9 +162,9 @@
                 <option value="5">5</option>
             </select>
 
-            <button class="btn-send-form">Отправить!</button>
+            <button onclick="sendRequest()" class="btn-send-form">Отправить!</button>
 
-          </form>
+          </div>
     </div>
     <div class="header-table">
         <h2 class="name-table">Таблица попаданий</h2>

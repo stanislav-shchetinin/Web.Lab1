@@ -1,20 +1,50 @@
-const sendRequest = (form) => {
-    let formData = new FormData(form);
-    let arguments = "?";
-    for (let pair of formData.entries()) {
-        arguments += pair[0] + "=" + pair[1] + "&";
-    }
-    arguments = arguments.substring(0, arguments.length - 1);
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://se.ifmo.ru/~s367658/web-lab1/php/handler.php' + arguments);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send();
+const sendRequest = () => {
+    const valid = validation();
+    if (valid !== "OK") {
+        alert(valid);
+    } else {
 
-    xhr.onload = function() {
-        if (xhr.status != 200) {
-            alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
-        } else {
-            responseHandler(xhr.responseText);
+        const btnX = document.querySelectorAll('.radio-x');
+        const inputY = document.querySelector('.input-text');
+        const selectorR = document.querySelector('.r-select');
+
+        const checkedRadio = () =>{
+            let res;
+            btnX.forEach((item) => {
+                if (item.checked) {
+                    res = item.value;
+                }
+            })
+            return res;
         }
-    };
+        function formatParams( params ){
+            return "?" + Object
+                .keys(params)
+                .map(function(key){
+                    return key+"="+encodeURIComponent(params[key])
+                })
+                .join("&")
+        }
+
+        const params = {
+            X: checkedRadio(),
+            Y: inputY.value,
+            R: selectorR.value
+        }
+
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://se.ifmo.ru/~s367658/web-lab1/php/handler.php' +
+        formatParams(params));
+
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send();
+
+        xhr.onload = function() {
+            if (xhr.status != 200) {
+                alert(`Ошибка ${xhr.status}: ${xhr.statusText}`);
+            } else {
+                responseHandler(xhr.responseText);
+            }
+        };
+    }
 }

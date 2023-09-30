@@ -1,5 +1,4 @@
-const validation = () => {  
-    const form = document.querySelector('.input-form');
+const validation = () => {
     const inputY = document.querySelector('.input-text');
     const selectorR = document.querySelector('.r-select');
     
@@ -12,15 +11,11 @@ const validation = () => {
         return selectorR.value !== "";
     }
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        if (!checkInputY(inputY)){
-            alert("Значение Y должно быть от -3 до 3 (дробные значения вводите через точку, например, 2.9)");
-        } else if (!checkSelectorR(selectorR)){
-            alert("Не выбран R");
-        } else {
-            sendRequest(form);
-        }
-    })
+    if (!checkInputY(inputY)){
+        return "Значение Y должно быть от -3 до 3 (дробные значения вводите через точку, например, 2.9)";
+    } else if (!checkSelectorR(selectorR)){
+        return "Не выбран R";
+    } else {
+        return "OK";
+    }
 }
-validation();
