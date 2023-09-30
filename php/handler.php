@@ -18,8 +18,8 @@ $data["isValidValue"] = $params->checkParameters();
 if ($data["isValidValue"]) {
     $data["isInArea"] = $params->checkInArea();
     $data["currentTime"] = date('Y/m/d H:i:s');
-    $data["htmlTable"] = (string) new HtmlTable($params, $data["isInArea"]);
-    $data["scriptRunningTime"] = microtime(true) - $start;
+    $data["scriptRunningTime"] = round((microtime(true) - $start) * 1000, 3);
+    $data["htmlTable"] = (string) new HtmlTable($params, $data["isInArea"], $data["scriptRunningTime"]);
 }
 header('Content-type: application/json');
 echo json_encode($data);

@@ -4,7 +4,9 @@ const validation = () => {
     const selectorR = document.querySelector('.r-select');
     
     const checkInputY = (inputY) => {
-        return inputY.value >= -3 && inputY.value <= 3;
+        let y = inputY.value.replace(",", ".");
+        let regex = new RegExp(/^-?(?:3(?:\.0+)?|[0-2](?:\.[0-9]+)?|\.[0-9]+)$/);
+        return regex.test(y.toString());
     }
     const checkSelectorR = (selectorR) => {
         return selectorR.value !== "";

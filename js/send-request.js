@@ -14,8 +14,7 @@ const sendRequest = (form) => {
         if (xhr.status != 200) {
             alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
         } else {
-            let response = JSON.parse(xhr.responseText);
-            responseHandler(response);
+            responseHandler(xhr.responseText);
         }
     };
 }

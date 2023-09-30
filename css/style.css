@@ -1,6 +1,6 @@
 body{
     background-color: #0b0c2a;
-    margin: 0;
+    margin: 0 0;
     color: #fff;
     font-family: 'Roboto', sans-serif;
 }
@@ -44,9 +44,9 @@ li {
 }
 .main {
     display: flex;
+    width: 80%;
+    max-width: 700px;
     margin: auto;
-    width: 60%;
-    margin-top: 150px;
     justify-content: space-between;
 }
 .heading {
@@ -80,8 +80,7 @@ li {
     width: 1px;
     height: 60px;
     background-color: #fff;
-    margin: auto;
-    margin-top: 26px;
+    margin: 26px auto auto;
 }
 .gif {
     max-height: 300px;
@@ -89,8 +88,7 @@ li {
     display: flex;
     height: 30%;
     width: 30%;
-    margin: auto;
-    margin-top: 50px;
+    margin: 50px auto auto;
 }
 
 .submenu {
@@ -166,14 +164,6 @@ li {
     padding: 20px 20px;
     align-items: center;
 }
-.input-form {
-    margin-left: 10px;
-}
-
-.graph {
-    max-width: 300px;
-}
-
 
 label {
     display: block;
@@ -190,7 +180,6 @@ label {
     justify-content: space-between;
 }
 .input-text {
-    display: block;
     width: 100%; 
     height: calc(1.25rem + 2px);
     padding: 0.375rem 0;
@@ -206,10 +195,6 @@ label {
 }
 
 @media (max-width: 768px) {
-	.graph {
-        max-width: 200px;
-        max-height: 200px;
-    }
     .btn-x {
         width: 30px;
     }
@@ -224,6 +209,8 @@ label {
 
 .radio-btn {
     display: flex;
+    margin: auto;
+    width: 90%;
 }
 
 .radio-x {
@@ -239,11 +226,59 @@ label {
     transition: 0.2s all linear;
     outline: none;
     margin-right: 5px;
-
-    position: relative;
     top: 4px;
 }
   
 input:checked {
     border: 6px solid white;
+}
+
+.header-table {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.wrapper-table-hits {
+    width: 80%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    max-width: 700px;
+    overflow-y: auto;
+    overflow-x: auto;
+    margin: auto auto 100px;
+}
+
+.table-hits {
+    text-align: left;
+    border-collapse: collapse;
+    border-radius: 20px;
+    box-shadow: 0 0 0 10px #FFAB51;
+    width: 90%;
+}
+
+.table-hits th {
+    padding: 10px 20px;
+    background-color: #0b0c2a;
+}
+.table-hits th:first-child {
+    border-top-left-radius: 20px;
+}
+.table-hits th:last-child {
+    border-top-right-radius: 20px;
+}
+.table-hits td {
+    border-top: 10px solid #FFAB51;
+    padding: 8px;
+    background-color: #0b0c2a;
+}
+td, th {
+    text-align: center;
 }
