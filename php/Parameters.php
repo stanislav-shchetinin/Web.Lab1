@@ -4,22 +4,24 @@ class Parameters
     private string $x;
     private string $y;
     private string $r;
+    private string $error;
 
     public function __construct(string $x, string $y, string $r)
     {
         $this->x = $x;
         $this->y = $y;
         $this->r = $r;
+        $this->error = "";
     }
 
     private function check_x(): bool
     {
         if ($this->x !== strval(intval($this->x))){
-            echo "Параметр X не является натуральным числом";
+            $this->error = "Параметр X не является натуральным числом";
             return false;
         }
         if ((int)$this->x < -5 || (int)$this->x > 5){
-            echo "Параметр X не лежит в пределах [-5; 5]";
+            $this->error = "Параметр X не лежит в пределах [-5; 5]";
             return false;
         }
         return true;
@@ -27,11 +29,11 @@ class Parameters
     private function check_y(): bool
     {
         if (!is_numeric($this->y)){
-            echo "Параметр Y не является числом";
+            $this->error = "Параметр Y не является числом";
             return false;
         }
         if ($this->y < -3 || $this->y > 3){
-            echo "Параметр Y не лежит в пределах [-3; 3]";
+            $this->error = "Параметр Y не лежит в пределах [-3; 3]";
             return false;
         }
         return true;
@@ -39,11 +41,11 @@ class Parameters
     private function check_r(): bool
     {
         if ($this->r !== strval(intval($this->r))){
-            echo "Параметр R не является натуральным числом";
+            $this->error = "Параметр R не является натуральным числом";
             return false;
         }
         if ($this->r < 1 || $this->r > 5){
-            echo "Параметр R не лежит в пределах [1; 5]";
+            $this->error = "Параметр R не лежит в пределах [1; 5]";
             return false;
         }
         return true;
@@ -67,5 +69,8 @@ class Parameters
     }
     public function getArrayParameters() : array {
         return [$this->x, $this->y, $this->r];
+    }
+    public function getError() : string {
+        return $this->error;
     }
 }
