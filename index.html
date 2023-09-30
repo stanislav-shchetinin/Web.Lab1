@@ -7,8 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="js/aos.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/save-table.js" defer></script>
     <script src="js/response-handler.js" defer></script>
@@ -21,15 +23,15 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="https://t.me/private_stasik">
+            <a href="https://t.me/private_stasik" data-aos="fade-down">
                 <img src="img/cat-logo.jpg" alt="cat-logo" class="cat-logo">
             </a>
 
             <a href="index.html" 
-                    class="item-link">Lab1</a>
+                    class="item-link" data-aos="fade-down">Lab1</a>
 
-            <div class="dropdown">
-                <a href="#" class="fa item-link">Info</a>
+            <div class="dropdown" data-aos="fade-down">
+                <a href="#" class="fa item-link" data-aos="fade-down">Info</a>
 
                 <ul class="submenu">
                     <li class="item">
@@ -59,9 +61,9 @@
             Разработать PHP-скрипт, определяющий попадание точки на координатной плоскости в заданную область
         </p>
     </section>
-    <img src="img/pepe.gif" alt="gif" class="gif">
-    <img src="img/graph.webp" alt="graph" class="gif">
-    <div class="main">  
+    <img src="img/pepe.gif" alt="gif" class="gif" data-aos="zoom-in" data-aos-delay="500">
+    <img src="img/graph.webp" alt="graph" class="gif" data-aos="fade-right" data-aos-delay="300">
+    <div class="main" data-aos="fade-left" data-aos-delay="100">
 
         <div class="input-form">
             <p>X:</p>
@@ -151,7 +153,7 @@
             </fieldset>
             
             <p>Y:</p>
-            <input name="Y" type="text" class="input-text">
+            <input name="Y" type="text" class="input-text" placeholder="-3..3">
 
             <select name="R" class="r-select">
                 <option value="" selected disabled hidden>R: </option>
@@ -162,15 +164,15 @@
                 <option value="5">5</option>
             </select>
 
-            <button onclick="sendRequest()" class="btn-send-form">Отправить!</button>
+            <button onclick="sendRequest()" class="btn-send-form bubbly-button">Отправить!</button>
 
           </div>
     </div>
-    <div class="header-table">
+    <div class="header-table" data-aos="fade-down">
         <h2 class="name-table">Таблица попаданий</h2>
         <button class="btn-clear-table">Очистить таблицу</button>
     </div>
-    <div class="wrapper-table-hits">
+    <div class="wrapper-table-hits" data-aos="fade-up">
         <table class="table-hits">
             <tr>
                 <th>X</th>
