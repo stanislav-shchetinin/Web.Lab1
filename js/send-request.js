@@ -1,7 +1,7 @@
 const sendRequest = () => {
     const valid = validation();
     if (valid !== "OK") {
-        alert(valid);
+        swal("Ошибка Валидации", valid, "error");
     } else {
 
         const btnX = document.querySelectorAll('.radio-x');
@@ -41,7 +41,7 @@ const sendRequest = () => {
 
         xhr.onload = function() {
             if (xhr.status != 200) {
-                alert(`Ошибка ${xhr.status}: ${xhr.statusText}`);
+                swal(`Ошибка ${xhr.status}`, `${xhr.statusText}`, "error");
             } else {
                 responseHandler(xhr.responseText);
             }

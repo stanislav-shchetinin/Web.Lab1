@@ -1,10 +1,10 @@
 const validation = () => {
     const inputY = document.querySelector('.input-text');
     const selectorR = document.querySelector('.r-select');
-    
+    const regRange = /^-?(?:3(?:\.0+)?|[0-2](?:\.[0-9]+)?|\.[0-9]+)$/
     const checkInputY = (inputY) => {
         let y = inputY.value.replace(",", ".");
-        let regex = new RegExp(/^-?(?:3(?:\.0+)?|[0-2](?:\.[0-9]+)?|\.[0-9]+)$/);
+        let regex = new RegExp(regRange);
         return regex.test(y.toString());
     }
     const checkSelectorR = (selectorR) => {
