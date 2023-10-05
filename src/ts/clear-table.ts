@@ -1,4 +1,3 @@
-"use strict";
 const clearTable = () => {
     let btn = document.querySelector('.btn-clear-table');
     btn.addEventListener('click', () => {
@@ -14,6 +13,6 @@ const clearTable = () => {
         `;
         saveTable();
     });
-};
+
+}
 clearTable();
-//# sourceMappingURL=clear-table.js.map
