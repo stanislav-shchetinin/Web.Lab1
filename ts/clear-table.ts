@@ -1,7 +1,7 @@
-const clearTable = () => {
-    let btn = document.querySelector('.btn-clear-table');
+const clearTable = () : void => {
+    let btn : Element = document.querySelector('.btn-clear-table');
     btn.addEventListener('click', () => {
-        table = document.querySelector('.table-hits');
+        let table : Element = document.querySelector('.table-hits');
         table.innerHTML = `
             <tr>
                 <th>X</th>

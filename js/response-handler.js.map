@@ -1,1 +1,0 @@
-{"version":3,"file":"response-handler.js","sourceRoot":"","sources":["../src/ts/response-handler.ts"],"names":[],"mappings":";AAAA,MAAM,eAAe,GAAG,CAAC,QAAQ,EAAE,EAAE;IACjC,IAAI,IAAI,GAAG,IAAI,CAAC,KAAK,CAAC,QAAQ,CAAC,CAAC;IAChC,MAAM,KAAK,GAAG,QAAQ,CAAC,aAAa,CAAC,aAAa,CAAC,CAAC;IACpD,KAAK,CAAC,kBAAkB,CAAC,WAAW,EAAE,IAAI,CAAC,SAAS,CAAC,CAAC;IACtD,SAAS,EAAE,CAAC;AAChB,CAAC,CAAA"}

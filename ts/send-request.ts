@@ -1,23 +1,23 @@
-const sendRequest = () => {
-    const valid = validation();
+const sendRequest = () : void => {
+    const valid : string = validation();
     if (valid !== "OK") {
-        swal("Ошибка Валидации", valid, "error");
+        alert("Ошибка Валидации");
     } else {
 
-        const btnX = document.querySelectorAll('.radio-x');
-        const inputY = document.querySelector('.input-text');
-        const selectorR = document.querySelector('.r-select');
+        const btnX : NodeListOf<HTMLInputElement> = document.querySelectorAll('.radio-x');
+        const inputY : HTMLInputElement = document.querySelector('.input-text');
+        const selectorR : HTMLInputElement = document.querySelector('.r-select');
 
         const checkedRadio = () =>{
-            let res;
-            btnX.forEach((item) => {
+            let res : string;
+            btnX.forEach((item : HTMLInputElement) : void => {
                 if (item.checked) {
                     res = item.value;
                 }
             })
             return res;
         }
-        function formatParams( params ){
+        function formatParams( params : {X: string, Y: string, R: string} ) : string {
             return "?" + Object
                 .keys(params)
                 .map(function(key){
@@ -26,22 +26,22 @@ const sendRequest = () => {
                 .join("&")
         }
 
-        const params = {
+        const params : {X: string, Y: string, R: string} = {
             X: checkedRadio(),
             Y: inputY.value,
             R: selectorR.value
         }
 
-        let xhr = new XMLHttpRequest();
+        let xhr : XMLHttpRequest = new XMLHttpRequest();
         xhr.open('GET', 'https://se.ifmo.ru/~s367658/web-lab1/php/handler.php' +
-        formatParams(params));
+            formatParams(params));
 
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send();
 
         xhr.onload = function() {
             if (xhr.status != 200) {
-                swal(`Ошибка ${xhr.status}`, `${xhr.statusText}`, "error");
+                alert(`Ошибка ${xhr.status}`);
             } else {
                 responseHandler(xhr.responseText);
             }
