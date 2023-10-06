@@ -9,7 +9,7 @@
     "allowJs": true,
     "esModuleInterop": true,
     "strict": false,
-    "outDir": "js",
+    "outDir": "out/js",
     "noUnusedLocals": true
   },
   "include": [
