@@ -1,22 +1,11 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require("webpack");
-
+const path = require("path");
 module.exports = {
-    entry: {
-        main: path.resolve(__dirname, 'out/js/send-request.js'),
-    },
+    mode: "development",
+    entry: "./src/main",
+    devtool: "inline-source-map",
     module: {
-        rules: []
+        rules: [{ test: /\.tsx?$/, use: "ts-loader", exclude: /node_modules/ }],
     },
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'index_bundle.js'
-    },
-    plugins: [
-        new HtmlWebpackPlugin(),
-        new webpack.EnvironmentPlugin({
-            'NODE_ENV': 'production'
-        })
-    ]
-}
+    resolve: { extensions: [".tsx", ".ts", ".js"] },
+    output: { filename: "script.js", path: path.resolve(__dirname, "dist") },
+};
