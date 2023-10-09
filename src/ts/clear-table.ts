@@ -1,8 +1,8 @@
 const clearTable = (): void => {
-    let btn: Element = document.querySelector('.btn-clear-table');
-    btn.addEventListener('click', () => {
-        let table: Element = document.querySelector('.table-hits');
-        table.innerHTML = `
+  let btn: Element = document.querySelector(".btn-clear-table");
+  btn.addEventListener("click", () => {
+    let table: Element = document.querySelector(".table-hits");
+    table.innerHTML = `
             <tr>
                 <th>X</th>
                 <th>Y</th>
@@ -11,8 +11,7 @@ const clearTable = (): void => {
                 <th>Время работы</th>
             </tr>
         `;
-        saveTable();
-    });
-
-}
+    saveTable();
+  });
+};
 clearTable();
