@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #0b0c2a;
     margin: 0;
     color: #fff;
@@ -6,7 +6,7 @@ body{
 }
 
 a {
-    color: #fff; 
+    color: #fff;
     text-decoration: none;
 }
 
@@ -120,11 +120,11 @@ li {
     padding-left: 5px;
 }
 
-.submenu:hover{
+.submenu:hover {
     transform: scaleY(1);
 }
 
-.fa:hover ~ .submenu{
+.fa:hover ~ .submenu {
     transform: scaleY(1);
 }
 
@@ -143,20 +143,20 @@ li {
 }
 
 .submenu .item-link::after {
-    display: block; 
-    content: ""; 
+    display: block;
+    content: "";
     height: 2px;
     width: 0;
-    background-color: #0b0c2a; 
-    transition: width 0.4s ease-in-out; 
+    background-color: #0b0c2a;
+    transition: width 0.4s ease-in-out;
 }
 
 .submenu .item-link:hover::after {
     width: 100%;
 }
 
-.submenu .item-link:hover{
-    color:#0b0c2a;
+.submenu .item-link:hover {
+    color: #0b0c2a;
 }
 
 .submenu .item:last-child {
@@ -221,7 +221,7 @@ label {
     margin-right: 5px;
     top: 4px;
 }
-  
+
 input:checked {
     border: 6px solid white;
 }
@@ -285,11 +285,11 @@ td, th {
     background-color: #0b0c2a;
 }
 
-.btn{
+.btn {
     border-radius: 4px;
     box-shadow: inset #FFF3;
     color: #fff;
-    width:100px;
+    width: 100px;
     padding: 5px 0;
     text-align: center;
     font-size: 14px;
