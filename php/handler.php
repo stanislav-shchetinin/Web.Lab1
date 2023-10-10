@@ -19,7 +19,7 @@ if ($data["isValidValue"]) {
     $data["isInArea"] = $params->checkInArea();
     $data["currentTime"] = date('Y/m/d H:i:s');
     $data["scriptRunningTime"] = round((microtime(true) - $start) * 1000, 3);
-    $data["htmlTable"] = (string) new HtmlTable($params, $data["isInArea"], $data["scriptRunningTime"]);
+    $data["htmlTable"] = (string)new HtmlTable($params, $data["isInArea"], $data["scriptRunningTime"]);
 } else {
     header('HTTP/1.1 400 BadRequest', true, 400);
     $data["reasonForTheError"] = $params->getError();
